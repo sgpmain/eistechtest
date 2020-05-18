@@ -7,3 +7,12 @@ kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor
 
 # check topics have been created
 kafka-topics.bat --list --bootstrap-server localhost:9092
+
+kafka-console-consumer --bootstrap-server localhost:9092  --topic word-kafka-topic-name
+kafka-console-consumer --bootstrap-server localhost:9092  --topic sentence-kafka-topic-name
+
+#####################################
+# cassandra
+cqlsh> create keyspace test with replication = {'class':'SimpleStrategy', 'replication_factor':3};
+cqlsh> use test;
+cqlsh:test> create table book ( id int primary key, sentence text );

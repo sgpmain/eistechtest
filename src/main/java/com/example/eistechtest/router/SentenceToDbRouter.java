@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SentenceToDbRouter extends RouteBuilder {
 
-    private static final String CQL = "insert into users(id, name) values (?, ?)";
+    private static final String CQL = "insert into book(id, sentence) values (?, ?)";
 
     @Override
     public void configure() throws Exception {
